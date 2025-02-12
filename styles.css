@@ -6,6 +6,15 @@ body {
     padding: 20px;
 }
 
+/* Estilos del input de contraseña */
+#password {
+    width: 200px;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+
 h1, h2, h3 {
     font-family: 'Dancing Script', cursive;
     color: #ff4d6d;
@@ -26,11 +35,21 @@ button:hover {
     transform: scale(1.1);
 }
 
-input {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    width: 100%;
+/* Sobres alineados en horizontal */
+.envelopes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.envelope {
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.envelope:hover {
+    transform: scale(1.2);
 }
 
 /* Lluvia de corazones */
