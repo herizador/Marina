@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San valentin</title>
+    <title>San Valentin</title>
+    <link rel="stylesheet" href="arreglos.css">
 </head>
 <body>
     <div class="Div-p">
         <div>
-            <h4>Quieres ser mi San Valentin?</h4>
+            <h1>¡Feliz Día de San Valentín!</h1>
+            <h4>¿Quieres ser mi San Valentín?</h4>
+            <button id="yes-button">Sí</button>
+            <button id="no-button">No</button>
+            <p id="emotional-message"></p>
+            <script>
+                const yesButton = document.getElementById('yes-button');
+                const noButton = document.getElementById('no-button');
+                const emotionalMessage = document.getElementById('emotional-message');
+                let messages = [
+                    "¡Eres la mejor!",
+                    "No puedo imaginar mi vida sin ti.",
+                    "Eres mi razón de ser.",
+                    "Te quiero más que a nada.",
+                ];
+                let currentMessageIndex = 0;
+
+                yesButton.addEventListener('click', () => {
+                    alert("¡Yay! ¡Feliz Día de San Valentín!");
+                });
+
+                noButton.addEventListener('click', () => {
+                    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+                    emotionalMessage.innerText = messages[currentMessageIndex];
+                    emotionalMessage.style.fontSize = "2em"; // Increase size
+                });
+            </script>
+
+            <audio autoplay loop>
+                <source src="path_to_your_music.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <p>Te quiero mucho y espero que este día sea especial para ti.</p>
+
+
+            <img src="path_to_your_image.jpg" alt="Decorative Heart" class="decorative-image">
         </div>
     </div>
 </body>
