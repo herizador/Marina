@@ -1,0 +1,15 @@
+{
+    "name": "San Valentín para Marina",
+    "short_name": "San Valentín",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFDEE9",
+    "theme_color": "#FF4D6D",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
