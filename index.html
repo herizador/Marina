@@ -3,54 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Valentin</title>
+    <title>San Valentín</title>
     <link rel="stylesheet" href="arreglos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="Div-p">
-        <div>
-            <h1>¡Feliz Día de San Valentín!</h1>
-            <h4>¿Quieres ser mi San Valentín?</h4>
-            <button id="yes-button">Sí</button>
-            <button id="no-button">No</button>
-            <p id="emotional-message"></p>
-            <script>
-                const yesButton = document.getElementById('yes-button');
-                const noButton = document.getElementById('no-button');
-                const emotionalMessage = document.getElementById('emotional-message');
-                let messages = [
-                    "¡Eres la mejor!",
-                    "No puedo imaginar mi vida sin ti.",
-                    "Eres mi razón de ser.",
-                    "Te quiero más que a nada.",
-                ];
-                let currentMessageIndex = 0;
-
-                yesButton.addEventListener('click', () => {
-                    alert("¡Yay! ¡Feliz Día de San Valentín!");
-                });
-
-                noButton.addEventListener('click', () => {
-                    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-                    emotionalMessage.innerText = messages[currentMessageIndex];
-                    emotionalMessage.style.fontSize = "2em"; // Increase size
-                });
-            </script>
-
-            <audio autoplay loop>
-                <source src="path_to_your_music.mp3" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <p>Te quiero mucho y espero que este día sea especial para ti.</p>
-
-
-            <img src="path_to_your_image.jpg" alt="Decorative Heart" class="decorative-image">
+    <div class="container">
+        <h1>💖 ¡Feliz Día de San Valentín! 💖</h1>
+        <h4>¿Quieres ser mi San Valentín? 🥺</h4>
+        <div class="buttons">
+            <button id="yes-button">Sí 💘</button>
+            <button id="no-button">No 💔</button>
         </div>
+        <p id="emotional-message"></p>
+
+        <script>
+            const yesButton = document.getElementById('yes-button');
+            const noButton = document.getElementById('no-button');
+            const emotionalMessage = document.getElementById('emotional-message');
+            let messages = [
+                "Por favor, no me rompas el corazón 🥺💔",
+                "Te prometo que seré el mejor San Valentín 😭",
+                "Dame una oportunidad, por favor 🙏💞",
+                "No me hagas llorar 🥹💖"
+            ];
+            let currentMessageIndex = 0;
+
+            yesButton.addEventListener('click', () => {
+                document.body.innerHTML = `<div class="final-message">
+                    <h1>💖 ¡Sabía que aceptarías! 💖</h1>
+                    <p>Eres la mejor, ¡te quiero mucho! 🥰</p>
+                    <div class="hearts-container"></div>
+                </div>`;
+                createHearts();
+            });
+
+            noButton.addEventListener('click', () => {
+                currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+                emotionalMessage.innerText = messages[currentMessageIndex];
+            });
+
+            function createHearts() {
+                let heartsContainer = document.querySelector(".hearts-container");
+                for (let i = 0; i < 20; i++) {
+                    let heart = document.createElement("div");
+                    heart.className = "floating-heart";
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+                    heartsContainer.appendChild(heart);
+                }
+            }
+        </script>
+
+        <audio autoplay loop>
+            <source src="tu_musica.mp3" type="audio/mpeg">
+            Tu navegador no soporta el audio.
+        </audio>
     </div>
 </body>
 </html>
