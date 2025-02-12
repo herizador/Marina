@@ -23,18 +23,44 @@ document.getElementById("login-button").addEventListener("click", function () {
         document.getElementById("login-container").style.display = "none";
         document.getElementById("app-container").style.display = "block";
         startCountdown();
+        startHeartRain();
     } else {
         document.getElementById("error-message").innerText = "Oops, intenta de nuevo 😢";
     }
 });
 
-// Cuenta regresiva
-function startCountdown() {
-    const targetDate = new Date("February 14, 2025 00:00:00").getTime();
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        document.getElementById("countdown").innerText = `${days}`;
-    }, 1000);
+// Lluvia de corazones
+function startHeartRain() {
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.innerText = "💖";
+        heart.className = "heart";
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+        document.body.appendChild(heart);
+    }
+}
+
+// Generar mensajes románticos
+const messages = [
+    "Eres mi razón de ser 💖",
+    "Te amo más que a nada en este mundo 🥰",
+    "Cada día a tu lado es un regalo 🎁",
+    "Mi amor por ti es infinito ✨",
+];
+
+document.getElementById("generate-message").addEventListener("click", function () {
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("romantic-message").innerText = randomMessage;
+});
+
+// Cartas con mensajes
+const letters = [
+    "Mi amor, cada día a tu lado es increíble ❤️",
+    "Eres la persona más especial del mundo 💕",
+    "Prometo amarte por siempre y hacerte feliz 🥰",
+];
+
+function openEnvelope(index) {
+    document.getElementById("letter-message").innerText = letters[index - 1];
 }
