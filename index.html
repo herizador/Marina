@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Valentín 💖</title>
+    <title>Para Marina 💖</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <div id="login-container">
-        <h2>💖 Bienvenida, mi amor 💖</h2>
+    <!-- Pregunta inicial -->
+    <div id="question-container">
+        <h2>💖 ¿Quieres ser mi San Valentín? 💖</h2>
+        <button id="yes-button">Sí 💘</button>
+        <button id="no-button">No 💔</button>
+        <p id="plea-message"></p>
+    </div>
+
+    <!-- Mini juego de contraseña -->
+    <div id="login-container" style="display: none;">
+        <h2>💖 ¡Sabía que aceptarías! 💖</h2>
         <p>¿Cómo me dices de cariño? 🥰</p>
         <input type="text" id="password" placeholder="Escribe aquí...">
         <button id="login-button">Entrar</button>
         <p id="error-message"></p>
     </div>
 
+    <!-- Contenido principal -->
     <div id="app-container" style="display: none;">
-        <h1>💘 Feliz Día de San Valentín 💘</h1>
+        <h1>💘 Feliz Día de San Valentín, Marina 💘</h1>
 
         <!-- Cuenta regresiva -->
-        <p>Faltan <span id="countdown"></span> para el 14 de febrero. 💝</p>
+        <p>Faltan <span id="countdown"></span> días para el 14 de febrero. 💝</p>
 
-        <!-- Mensaje de IA -->
+        <!-- Mensaje romántico con IA -->
         <button id="generate-message">💌 Mensaje para ti</button>
         <p id="romantic-message"></p>
 
@@ -35,10 +46,7 @@
             <div class="envelope" onclick="openEnvelope(3)">💌</div>
         </div>
         <p id="letter-message"></p>
-
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
-
