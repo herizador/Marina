@@ -3,62 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Valentín</title>
-    <link rel="stylesheet" href="arreglos.css">
+    <title>San Valentín 💖</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>💖 ¡Feliz Día de San Valentín! 💖</h1>
-        <h4>¿Quieres ser mi San Valentín? 🥺</h4>
-        <div class="buttons">
-            <button id="yes-button">Sí 💘</button>
-            <button id="no-button">No 💔</button>
-        </div>
-        <p id="emotional-message"></p>
 
-        <script>
-            const yesButton = document.getElementById('yes-button');
-            const noButton = document.getElementById('no-button');
-            const emotionalMessage = document.getElementById('emotional-message');
-            let messages = [
-                "Por favor, no me rompas el corazón 🥺💔",
-                "Te prometo que seré el mejor San Valentín 😭",
-                "Dame una oportunidad, por favor 🙏💞",
-                "No me hagas llorar 🥹💖"
-            ];
-            let currentMessageIndex = 0;
-
-            yesButton.addEventListener('click', () => {
-                document.body.innerHTML = `<div class="final-message">
-                    <h1>💖 ¡Sabía que aceptarías! 💖</h1>
-                    <p>Eres la mejor, ¡te quiero mucho! 🥰</p>
-                    <div class="hearts-container"></div>
-                </div>`;
-                createHearts();
-            });
-
-            noButton.addEventListener('click', () => {
-                currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-                emotionalMessage.innerText = messages[currentMessageIndex];
-            });
-
-            function createHearts() {
-                let heartsContainer = document.querySelector(".hearts-container");
-                for (let i = 0; i < 20; i++) {
-                    let heart = document.createElement("div");
-                    heart.className = "floating-heart";
-                    heart.style.left = `${Math.random() * 100}%`;
-                    heart.style.animationDuration = `${2 + Math.random() * 3}s`;
-                    heartsContainer.appendChild(heart);
-                }
-            }
-        </script>
-
-        <audio autoplay loop>
-            <source src="tu_musica.mp3" type="audio/mpeg">
-            Tu navegador no soporta el audio.
-        </audio>
+    <div id="login-container">
+        <h2>💖 Bienvenida, mi amor 💖</h2>
+        <p>¿Cómo me dices de cariño? 🥰</p>
+        <input type="text" id="password" placeholder="Escribe aquí...">
+        <button id="login-button">Entrar</button>
+        <p id="error-message"></p>
     </div>
+
+    <div id="app-container" style="display: none;">
+        <h1>💘 Feliz Día de San Valentín 💘</h1>
+
+        <!-- Cuenta regresiva -->
+        <p>Faltan <span id="countdown"></span> para el 14 de febrero. 💝</p>
+
+        <!-- Mensaje de IA -->
+        <button id="generate-message">💌 Mensaje para ti</button>
+        <p id="romantic-message"></p>
+
+        <!-- Sobres virtuales -->
+        <h3>📜 Cartas de amor</h3>
+        <div class="envelopes">
+            <div class="envelope" onclick="openEnvelope(1)">💌</div>
+            <div class="envelope" onclick="openEnvelope(2)">💌</div>
+            <div class="envelope" onclick="openEnvelope(3)">💌</div>
+        </div>
+        <p id="letter-message"></p>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
