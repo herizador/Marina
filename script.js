@@ -50,18 +50,20 @@ function createHearts() {
         document.body.appendChild(heartsContainer);
     }
     
-    for (let i = 0; i < 20; i++) {
-        let heart = document.createElement("div");
-        heart.className = "floating-heart";
-        heart.style.left = `${Math.random() * 100}%`; // Posición aleatoria
-        heart.style.animationDuration = `${3 + Math.random() * 3}s`; // Variación de velocidad
-        heartsContainer.appendChild(heart);
-
-        // Eliminar el corazón después de que termine la animación
+    for (let i = 0; i < 25; i++) {
         setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }
+            let heart = document.createElement("div");
+            heart.className = "floating-heart";
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${5 + Math.random() * 4}s`; // Variación en la velocidad
+            heart.style.width = `${40 + Math.random() * 20}px`; // Tamaños variados
+            heart.style.height = heart.style.width;
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000); // Mayor duración antes de desaparecer
+        }, i * 300);
 }
 
 // Cartas con mensajes
