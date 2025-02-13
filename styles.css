@@ -1,10 +1,10 @@
-/* Fondo con degradado romántico */
+/* Fondo romántico */
 body {
-    background: linear-gradient(120deg, #FFC3A0, #FFAFBD);
+    background: linear-gradient(120deg, #FFDEE9, #B5FFFC);
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 /* Tarjetas con efecto elegante */
@@ -84,7 +84,7 @@ button:hover {
     bottom: -60px; /* Comienzan desde abajo */
     width: 120px; /* Tamaño aumentado */
     height: 120px; /* Tamaño aumentado */
-    background-color: white;
+    background-color: pink;
     clip-path: path("M14.5 4.5C14.5 2 12.5 0 10 0S5.5 2 5.5 4.5c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5z");
     animation: floatUp 5s linear infinite;
     opacity: 0.9;
