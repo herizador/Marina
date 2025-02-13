@@ -31,7 +31,7 @@ document.getElementById("login-button").addEventListener("click", function () {
 
 // Lluvia de corazones
 function startHeartRain() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
         let heart = document.createElement("div");
         heart.innerText = "💖";
         heart.className = "heart";
@@ -41,15 +41,13 @@ function startHeartRain() {
     }
 }
 
-// Generar mensajes románticos
-const messages = [
-    "Eres mi razón de ser 💖",
-    "Te amo más que a nada en este mundo 🥰",
-    "Cada día a tu lado es un regalo 🎁",
-    "Mi amor por ti es infinito ✨",
+// Cartas con mensajes
+const letters = [
+    "Mi amor, cada día a tu lado es increíble ❤️",
+    "Eres la persona más especial del mundo 💕",
+    "Prometo amarte por siempre y hacerte feliz 🥰",
 ];
 
-document.getElementById("generate-message").addEventListener("click", function () {
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("romantic-message").innerText = randomMessage;
-});
+function openEnvelope(index) {
+    document.getElementById("letter-message").innerText = letters[index];
+}
