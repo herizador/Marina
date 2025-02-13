@@ -1,4 +1,4 @@
-const CACHE_NAME = "san-valentin-v1";
+const CACHE_NAME = "san-valentin-v2";
 const STATIC_ASSETS = [
     "/",
     "/index.html",
