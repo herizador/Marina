@@ -14,7 +14,7 @@ const romanticMessages = [
     "💘 Falta poco para algo increíble..."
 ];
 
-let countdown = 10; // Tiempo en segundos
+let countdown = 1000; // Tiempo en segundos
 const countdownTimer = document.getElementById("countdown-timer");
 const romanticMessage = document.getElementById("romantic-message");
 
