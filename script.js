@@ -64,6 +64,7 @@ function createHearts() {
                 heart.remove();
             }, 8000); // Mayor duración antes de desaparecer
         }, i * 300);
+    }
 }
 
 // Cartas con mensajes
