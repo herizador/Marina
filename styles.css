@@ -11,6 +11,8 @@
     justify-content: center;
     align-items: center;
     font-size: 2em;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Contador de segundos */
@@ -18,6 +20,19 @@
     font-size: 4em;
     font-weight: bold;
     color: #ff2e63;
+    margin-top: 10px;
+}
+
+/* Diseño responsive */
+@media (max-width: 600px) {
+    #countdown-screen {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    #countdown-timer {
+        font-size: 3em;
+    }
 }
 
 /* Ocultar elementos hasta que aparezcan */
