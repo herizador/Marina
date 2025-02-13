@@ -42,6 +42,14 @@ function startCountdown() {
 // Función para crear la lluvia de corazones más grandes
 function createHearts() {
     let heartsContainer = document.querySelector(".hearts-container");
+
+    // Si el contenedor no existe, lo creamos
+    if (!heartsContainer) {
+        heartsContainer = document.createElement("div");
+        heartsContainer.className = "hearts-container";
+        document.body.appendChild(heartsContainer);
+    }
+    
     for (let i = 0; i < 20; i++) {
         let heart = document.createElement("div");
         heart.className = "floating-heart";
