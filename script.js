@@ -1,8 +1,11 @@
-// Registrar Service Worker
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
-        .then(() => console.log("Service Worker registrado"))
-        .catch(error => console.log("Error al registrar Service Worker:", error));
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(reg => reg.unregister()); // Borra SW antiguos
+    }).then(() => {
+        navigator.serviceWorker.register("/service-worker.js")
+            .then(() => console.log("Service Worker actualizado"))
+            .catch(error => console.log("Error al registrar Service Worker:", error));
+    });
 }
 
 // Definir la fecha y hora objetivo (hoy a las 20:30)
