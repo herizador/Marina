@@ -5,6 +5,13 @@ if ("serviceWorker" in navigator) {
         .catch(error => console.log("Error al registrar Service Worker:", error));
 }
 
+// Definir la fecha y hora objetivo (hoy a las 20:30)
+const targetDate = new Date();
+targetDate.setHours(20, 30, 0, 0); // 20:30:00 horas de hoy
+
+const countdownTimer = document.getElementById("countdown-timer");
+const romanticMessage = document.getElementById("romantic-message");
+
 // Mensajes románticos que se mostrarán durante la cuenta regresiva
 const romanticMessages = [
     "💕 Hoy es un día especial...",
@@ -14,26 +21,30 @@ const romanticMessages = [
     "💘 Falta poco para algo increíble..."
 ];
 
-let countdown = 100; // Tiempo en segundos
-const countdownTimer = document.getElementById("countdown-timer");
-const romanticMessage = document.getElementById("romantic-message");
-
 function startCountdown() {
     let interval = setInterval(() => {
-        countdownTimer.innerText = countdown;
+        const now = new Date().getTime(); // Hora actual
+        const timeLeft = targetDate - now; // Diferencia en milisegundos
 
-        // Cambiar mensaje cada 2 segundos
-        if (countdown % 2 === 0) {
-            romanticMessage.innerText = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
-        }
-
-        if (countdown <= 0) {
+        if (timeLeft <= 0) {
             clearInterval(interval);
             document.getElementById("countdown-screen").style.display = "none"; // Oculta la pantalla del contador
             document.getElementById("question-container").classList.remove("hidden"); // Muestra la pregunta
+            return;
         }
 
-        countdown--;
+        // Convertir tiempo restante a horas, minutos y segundos
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownTimer.innerText = `${hours}h ${minutes}m ${seconds}s`;
+
+        // Cambiar mensaje cada 10 segundos
+        if (seconds % 10 === 0) {
+            romanticMessage.innerText = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+        }
+
     }, 1000);
 }
 
