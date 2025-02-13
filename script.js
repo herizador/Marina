@@ -23,7 +23,7 @@ document.getElementById("login-button").addEventListener("click", function () {
         document.getElementById("login-container").style.display = "none";
         document.getElementById("app-container").style.display = "block";
         startCountdown();
-        startHeartRain();
+        createHearts();
     } else {
         document.getElementById("error-message").innerText = "Oops, intenta de nuevo 😢";
     }
@@ -39,21 +39,20 @@ function startCountdown() {
     }, 1000);
 }
 
-// Lluvia de corazones 100% funcional
-function startHeartRain() {
+// Función para crear la lluvia de corazones más grandes
+function createHearts() {
+    let heartsContainer = document.querySelector(".hearts-container");
     for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.style.left = `${Math.random() * 100}%`; // Posición aleatoria
+        heart.style.animationDuration = `${3 + Math.random() * 3}s`; // Variación de velocidad
+        heartsContainer.appendChild(heart);
+
+        // Eliminar el corazón después de que termine la animación
         setTimeout(() => {
-            let heart = document.createElement("div");
-            heart.innerText = "💖";
-            heart.className = "heart";
-            heart.style.left = `${Math.random() * 100}%`;
-            heart.style.animationDuration = `${3 + Math.random() * 2}s`;
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }, i * 200);
+            heart.remove();
+        }, 5000);
     }
 }
 
