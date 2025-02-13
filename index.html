@@ -6,13 +6,19 @@
     <title>Para Marina 💖</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="favicon.ico" type="icon.jpg">
     <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Pregunta inicial -->
-    <div id="question-container" class="card">
+    <!-- Pantalla del contador romántico -->
+    <div id="countdown-screen">
+        <h2>💖 Prepárate para algo especial 💖</h2>
+        <p id="romantic-message"></p>
+        <h1 id="countdown-timer">10</h1>
+    </div>
+
+    <!-- Pregunta inicial (se muestra después del contador) -->
+    <div id="question-container" class="hidden">
         <h2>💖 ¿Quieres ser mi San Valentín? 💖</h2>
         <button id="yes-button">Sí 💘</button>
         <button id="no-button">No 💔</button>
