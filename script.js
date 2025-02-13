@@ -47,17 +47,15 @@ function startHeartRain() {
     }
 }
 
-// Generar mensajes románticos
-const messages = [
-    "Eres mi razón de ser 💖",
-    "Te amo más que a nada en este mundo 🥰",
-    "Cada día a tu lado es un regalo 🎁",
-    "Mi amor por ti es infinito ✨",
-
-document.getElementById("generate-message").addEventListener("click", function () {
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("romantic-message").innerText = randomMessage;
-});
+// Cartas con mensajes
+const letters = [
+    "Mi amor, cada día a tu lado es increíble ❤️",
+    "Eres la persona más especial del mundo 💕",
+    "Prometo amarte por siempre y hacerte feliz 🥰",
+];
+function openEnvelope(index) {
+    document.getElementById("letter-message").innerText = letters[index - 1];
+}
     
 // Generar mensajes románticos corregido
 const messages = [
