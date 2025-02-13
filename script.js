@@ -53,14 +53,3 @@ document.getElementById("generate-message").addEventListener("click", function (
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     document.getElementById("romantic-message").innerText = randomMessage;
 });
-
-// Cartas con mensajes
-const letters = [
-    "Mi amor, cada día a tu lado es increíble ❤️",
-    "Eres la persona más especial del mundo 💕",
-    "Prometo amarte por siempre y hacerte feliz 🥰",
-];
-
-function openEnvelope(index) {
-    document.getElementById("letter-message").innerText = letters[index - 1];
-}
