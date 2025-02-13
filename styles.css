@@ -73,8 +73,10 @@ button:hover {
 }
 
 .heart {
-    position: absolute;
-    color: pink;
+    position: fixed;
+    bottom: 0;
     font-size: 2em;
+    color: pink;
     animation: hearts 4s linear infinite;
 }
+
