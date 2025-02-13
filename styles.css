@@ -81,12 +81,13 @@ button:hover {
 .floating-heart {
     position: absolute;
     bottom: -60px; /* Comienzan desde abajo */
-    width: 40px; /* Tamaño aumentado */
-    height: 40px; /* Tamaño aumentado */
+    width: 50px; /* Tamaño aumentado */
+    height: 50px; /* Tamaño aumentado */
     background-color: pink;
     clip-path: path("M14.5 4.5C14.5 2 12.5 0 10 0S5.5 2 5.5 4.5c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5z");
     animation: floatUp 5s linear infinite;
     opacity: 0.8;
+    z-index: 1000; /* Asegura que los corazones estén encima */
 }
 
 /* Animación de corazones flotantes */
