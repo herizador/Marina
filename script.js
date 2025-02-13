@@ -47,6 +47,18 @@ function startHeartRain() {
     }
 }
 
+// Generar mensajes románticos
+const messages = [
+    "Eres mi razón de ser 💖",
+    "Te amo más que a nada en este mundo 🥰",
+    "Cada día a tu lado es un regalo 🎁",
+    "Mi amor por ti es infinito ✨",
+
+document.getElementById("generate-message").addEventListener("click", function () {
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("romantic-message").innerText = randomMessage;
+});
+    
 // Generar mensajes románticos corregido
 const messages = [
     "Eres mi razón de ser 💖",
