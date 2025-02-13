@@ -1,6 +1,6 @@
-/* Fondo romántico */
+/* Fondo con degradado romántico */
 body {
-    background: linear-gradient(120deg, #FFDEE9, #B5FFFC);
+    background: linear-gradient(120deg, #FFC3A0, #FFAFBD);
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     margin: 0;
