@@ -29,25 +29,33 @@ document.getElementById("login-button").addEventListener("click", function () {
     }
 });
 
-// Lluvia de corazones
+// Lluvia de corazones corregida
 function startHeartRain() {
     for (let i = 0; i < 15; i++) {
-        let heart = document.createElement("div");
-        heart.innerText = "💖";
-        heart.className = "heart";
-        heart.style.left = `${Math.random() * 100}%`;
-        heart.style.animationDuration = `${2 + Math.random() * 3}s`;
-        document.body.appendChild(heart);
+        setTimeout(() => {
+            let heart = document.createElement("div");
+            heart.innerText = "💖";
+            heart.className = "heart";
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }, i * 300);
     }
 }
 
-// Cartas con mensajes
-const letters = [
-    "Mi amor, cada día a tu lado es increíble ❤️",
-    "Eres la persona más especial del mundo 💕",
-    "Prometo amarte por siempre y hacerte feliz 🥰",
+// Generar mensajes románticos corregido
+const messages = [
+    "Eres mi razón de ser 💖",
+    "Te amo más que a nada en este mundo 🥰",
+    "Cada día a tu lado es un regalo 🎁",
+    "Mi amor por ti es infinito ✨",
 ];
 
-function openEnvelope(index) {
-    document.getElementById("letter-message").innerText = letters[index];
-}
+document.getElementById("generate-message").addEventListener("click", function () {
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("romantic-message").innerText = randomMessage;
+});
