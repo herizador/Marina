@@ -12,9 +12,6 @@ if ("serviceWorker" in navigator) {
 const targetDate = new Date();
 targetDate.setHours(20, 30, 0, 0); // 20:30:00 horas de hoy
 
-const countdownTimer = document.getElementById("countdown-timer");
-const romanticMessage = document.getElementById("romantic-message");
-
 // Mensajes románticos que se mostrarán durante la cuenta regresiva
 const romanticMessages = [
     "💕 Hoy es un día especial...",
@@ -25,6 +22,14 @@ const romanticMessages = [
 ];
 
 function startCountdown() {
+    const countdownTimer = document.getElementById("countdown-timer");
+    const romanticMessage = document.getElementById("romantic-message");
+
+    if (!countdownTimer || !romanticMessage) {
+        console.error("No se encontraron los elementos del contador.");
+        return;
+    }
+    
     let interval = setInterval(() => {
         const now = new Date().getTime(); // Hora actual
         const timeLeft = targetDate - now; // Diferencia en milisegundos
@@ -77,16 +82,6 @@ document.getElementById("login-button").addEventListener("click", function () {
         document.getElementById("error-message").innerText = "Oops, intenta de nuevo 😢";
     }
 });
-
-function startCountdown() {
-    const targetDate = new Date("February 14, 2025 00:00:00").getTime();
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        document.getElementById("countdown").innerText = `${days}`;
-    }, 1000);
-}
 
 // Función para crear la lluvia de corazones más grandes
 function createHearts() {
