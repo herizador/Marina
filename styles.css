@@ -87,7 +87,7 @@ button:hover {
     background-color: pink;
     clip-path: path("M14.5 4.5C14.5 2 12.5 0 10 0S5.5 2 5.5 4.5c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5z");
     animation: floatUp 5s linear infinite;
-    opacity: 0.9;
+    opacity: 0.8;
     filter: drop-shadow(0px 0px 10px rgba(255, 105, 180, 0.8));
 }
 
