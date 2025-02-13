@@ -3,13 +3,13 @@
     "short_name": "San Valentín",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFDEE9",
+    "background_color": "#FFC3A0",
     "theme_color": "#FF4D6D",
     "icons": [
         {
             "src": "/icon.jpg",
             "sizes": "192x192",
-            "type": "image/jpg"
+            "type": "image/jpeg"
         }
     ]
 }
