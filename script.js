@@ -29,23 +29,7 @@ document.getElementById("login-button").addEventListener("click", function () {
     }
 });
 
-// Lluvia de corazones corregida
-function startHeartRain() {
-    for (let i = 0; i < 15; i++) {
-        setTimeout(() => {
-            let heart = document.createElement("div");
-            heart.innerText = "💖";
-            heart.className = "heart";
-            heart.style.left = `${Math.random() * 100}%`;
-            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 4000);
-        }, i * 300);
-    }
-}
+
 
 // Cartas con mensajes
 const letters = [
