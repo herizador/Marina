@@ -66,17 +66,31 @@ button:hover {
     transform: scale(1.2);
 }
 
-/* Lluvia de corazones */
-@keyframes hearts {
-    0% { transform: translateY(100vh); opacity: 1; }
-    100% { transform: translateY(-10vh); opacity: 0; }
-}
-
-.heart {
+/* Contenedor de corazones */
+.hearts-container {
     position: fixed;
-    bottom: 0;
-    font-size: 2em;
-    color: pink;
-    animation: hearts 4s linear infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
 }
 
+/* Corazones flotantes más grandes */
+.floating-heart {
+    position: absolute;
+    bottom: -60px; /* Comienzan desde abajo */
+    width: 40px; /* Tamaño aumentado */
+    height: 40px; /* Tamaño aumentado */
+    background-color: pink;
+    clip-path: path("M14.5 4.5C14.5 2 12.5 0 10 0S5.5 2 5.5 4.5c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5z");
+    animation: floatUp 5s linear infinite;
+    opacity: 0.8;
+}
+
+/* Animación de corazones flotantes */
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.8); opacity: 0; }
+}
