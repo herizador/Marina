@@ -5,6 +5,41 @@ if ("serviceWorker" in navigator) {
         .catch(error => console.log("Error al registrar Service Worker:", error));
 }
 
+// Mensajes románticos que se mostrarán durante la cuenta regresiva
+const romanticMessages = [
+    "💕 Hoy es un día especial...",
+    "🌹 Cada segundo es un paso más hacia la sorpresa...",
+    "💖 Eres lo mejor que me ha pasado...",
+    "😍 Espero que esto te haga sonreír...",
+    "💘 Falta poco para algo increíble..."
+];
+
+let countdown = 10; // Tiempo en segundos
+const countdownTimer = document.getElementById("countdown-timer");
+const romanticMessage = document.getElementById("romantic-message");
+
+function startCountdown() {
+    let interval = setInterval(() => {
+        countdownTimer.innerText = countdown;
+
+        // Cambiar mensaje cada 2 segundos
+        if (countdown % 2 === 0) {
+            romanticMessage.innerText = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+        }
+
+        if (countdown <= 0) {
+            clearInterval(interval);
+            document.getElementById("countdown-screen").style.display = "none"; // Oculta la pantalla del contador
+            document.getElementById("question-container").classList.remove("hidden"); // Muestra la pregunta
+        }
+
+        countdown--;
+    }, 1000);
+}
+
+// Iniciar el contador cuando cargue la página
+window.onload = startCountdown;
+
 // Pregunta inicial
 document.getElementById("yes-button").addEventListener("click", function () {
     document.getElementById("question-container").style.display = "none";
