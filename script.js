@@ -29,6 +29,16 @@ document.getElementById("login-button").addEventListener("click", function () {
     }
 });
 
+function startCountdown() {
+    const targetDate = new Date("February 14, 2025 00:00:00").getTime();
+    setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerText = `${days}`;
+    }, 1000);
+}
+
 // Lluvia de corazones 100% funcional
 function startHeartRain() {
     for (let i = 0; i < 20; i++) {
