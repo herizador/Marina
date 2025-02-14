@@ -14,11 +14,11 @@ targetDate.setHours(1, 22, 0, 0); // 20:30:00 horas de hoy
 
 // Mensajes románticos que se mostrarán durante la cuenta regresiva
 const romanticMessages = [
-    "💕 Hoy es un día especial...",
-    "🌹 Cada segundo es un paso más hacia la sorpresa...",
-    "💖 Eres lo mejor que me ha pasado...",
-    "😍 Espero que esto te haga sonreír...",
-    "💘 Falta poco para algo increíble..."
+    "💕 Hoy es un día especial",
+    "🌹 En cada segundo que pasa, mas te quiero",
+    "💖 Eres lo mejor que me ha pasado mi amorcito",
+    "😍 Espero que esto te haga muy feliz",
+    "💘 Falta poco para tu sorpresa"
 ];
 
 function startCountdown() {
