@@ -62,9 +62,10 @@ window.onload = function() {
 
     // Reproducir el audio de fondo
     document.getElementById("play-music").addEventListener("click", function () {
-    const audio = document.getElementById("background-music");
-    audio.play();
-    this.style.display = "none"; // Oculta el botón después de hacer clic
+        const audio = document.getElementById("background-music");
+        audio.play().then(() => {
+            this.style.display = "none"; // Oculta el botón una vez activado
+        }).catch(error => console.log("El navegador bloqueó el autoplay:", error));
     });
 };
 
@@ -131,16 +132,15 @@ function openEnvelope(index) {
 }
     
 // Generar mensajes románticos corregido
-const messages = [
-    "Eres mi razón de ser 💖",
-    "Te amo más que a nada en este mundo 🥰",
-    "Cada día a tu lado es un regalo 🎁",
-    "Mi amor por ti es infinito ✨",
-];
-
 const generateMessageButton = document.getElementById("generate-message");
     if (generateMessageButton) {
         generateMessageButton.addEventListener("click", function () {
+            const messages = [
+                "Eres mi razón de ser 💖",
+                "Te amo más que a nada en este mundo 🥰",
+                "Cada día a tu lado es un regalo 🎁",
+                "Mi amor por ti es infinito ✨"
+            ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             document.getElementById("romantic-message").innerText = randomMessage;
         });
