@@ -119,7 +119,7 @@ function createHearts() {
             heart.className = "floating-heart";
             heart.style.left = `${Math.random() * 100}%`;
             heart.style.animationDuration = `${6 + Math.random() * 4}s`; // Variación en la velocidad
-            heart.style.width = `${60 + Math.random() * 40}px`; // Tamaños variados
+            heart.style.width = `${100 + Math.random() * 80}px`; // Tamaños variados
             heart.style.height = heart.style.width;
             heartsContainer.appendChild(heart);
 
