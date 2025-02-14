@@ -168,3 +168,24 @@ button:hover {
     0% { transform: translateY(0) scale(1); opacity: 1; }
     100% { transform: translateY(-150vh) scale(1.5); opacity: 0; }
 }
+
+#play-music {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    font-family: 'Dancing Script', cursive;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+#play-music:hover {
+    background: #ff2e63;
+    transform: scale(1.1);
+}
