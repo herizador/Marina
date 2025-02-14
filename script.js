@@ -132,8 +132,11 @@ function openEnvelope(index) {
 }
     
 // Generar mensajes románticos corregido
-const generateMessageButton = document.getElementById("generate-message");
-    if (generateMessageButton) {
+document.addEventListener("DOMContentLoaded", function () {
+    const generateMessageButton = document.getElementById("generate-message");
+    const romanticMessage = document.getElementById("romantic-message");
+
+    if (generateMessageButton && romanticMessage) {
         generateMessageButton.addEventListener("click", function () {
             const messages = [
                 "Eres mi razón de ser 💖",
@@ -142,8 +145,9 @@ const generateMessageButton = document.getElementById("generate-message");
                 "Mi amor por ti es infinito ✨"
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById("romantic-message").innerText = randomMessage;
+            romanticMessage.innerText = randomMessage;
         });
     } else {
-        console.error("El botón 'Mensaje para ti' no se encontró en el DOM.");
+        console.error("No se encontró el botón 'Mensaje para ti' en el DOM.");
     }
+});
