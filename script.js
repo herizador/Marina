@@ -10,7 +10,7 @@ if ("serviceWorker" in navigator) {
 
 // Definir la fecha y hora objetivo (hoy a las 20:30)
 const targetDate = new Date();
-targetDate.setHours(20, 30, 0, 0); // 20:30:00 horas de hoy
+targetDate.setHours(1, 22, 0, 0); // 20:30:00 horas de hoy
 
 // Mensajes románticos que se mostrarán durante la cuenta regresiva
 const romanticMessages = [
