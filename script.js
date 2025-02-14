@@ -138,7 +138,13 @@ const messages = [
     "Mi amor por ti es infinito ✨",
 ];
 
-document.getElementById("generate-message").addEventListener("click", function () {
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("romantic-message").innerText = randomMessage;
-});
+const generateMessageButton = document.getElementById("generate-message");
+    if (generateMessageButton) {
+        generateMessageButton.addEventListener("click", function () {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("romantic-message").innerText = randomMessage;
+        });
+    } else {
+        console.error("El botón 'Mensaje para ti' no se encontró en el DOM.");
+    }
+};
