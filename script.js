@@ -60,6 +60,17 @@ function startCountdown() {
 // Iniciar el contador cuando cargue la página
 window.onload = startCountdown;
 
+window.onload = function() {
+    startCountdown();
+
+    // Reproducir el audio de fondo
+    const audio = document.getElementById("background-music");
+    if (audio) {
+        audio.volume = 0.5; // Ajusta el volumen si es necesario
+        audio.play().catch(error => console.log("El navegador bloqueó el autoplay:", error));
+    }
+};
+
 // Pregunta inicial
 document.getElementById("yes-button").addEventListener("click", function () {
     document.getElementById("question-container").style.display = "none";
