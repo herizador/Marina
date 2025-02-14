@@ -36,8 +36,9 @@ function startCountdown() {
 
         if (timeLeft <= 0) {
             clearInterval(interval);
-            document.getElementById("countdown-screen").style.display = "none"; // Oculta la pantalla del contador
-            document.getElementById("question-container").classList.remove("hidden"); // Muestra la pregunta
+            countdownTimer.innerText = "¡Es el momento! 💖";
+            document.getElementById("countdown-screen").style.display = "none";
+            document.getElementById("question-container").classList.remove("hidden");
             return;
         }
 
