@@ -61,11 +61,11 @@ window.onload = function() {
     startCountdown();
 
     // Reproducir el audio de fondo
+    document.getElementById("play-music").addEventListener("click", function () {
     const audio = document.getElementById("background-music");
-    if (audio) {
-        audio.volume = 0.5; // Ajusta el volumen si es necesario
-        audio.play().catch(error => console.log("El navegador bloqueó el autoplay:", error));
-    }
+    audio.play();
+    this.style.display = "none"; // Oculta el botón después de hacer clic
+    });
 };
 
 // Pregunta inicial
