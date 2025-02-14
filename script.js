@@ -47,7 +47,6 @@ function startCountdown() {
             clearInterval(interval);
             countdownTimer.innerText = "¡Es el momento! 💖";
             document.getElementById("countdown-screen").style.display = "none";
-            document.getElementById("question-container").classList.remove("hidden");
             showQuestion();
             return;
         }
