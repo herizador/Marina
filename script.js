@@ -57,9 +57,6 @@ function startCountdown() {
     }, 1000);
 }
 
-// Iniciar el contador cuando cargue la página
-window.onload = startCountdown;
-
 window.onload = function() {
     startCountdown();
 
