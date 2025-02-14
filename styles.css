@@ -146,8 +146,8 @@ button:hover {
 .floating-heart {
     position: absolute;
     bottom: -60px; /* Comienzan desde abajo */
-    width: 200px; /* Tamaño aumentado */
-    height: 200px; /* Tamaño aumentado */
+    width: 400px; /* Tamaño aumentado */
+    height: 400px; /* Tamaño aumentado */
     background-color: pink;
     clip-path: path("M14.5 4.5C14.5 2 12.5 0 10 0S5.5 2 5.5 4.5c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5z");
     animation: floatUp 5s linear infinite;
