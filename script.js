@@ -83,7 +83,7 @@ document.getElementById("no-button").addEventListener("click", function () {
 // Mini juego de login
 document.getElementById("login-button").addEventListener("click", function () {
     const password = document.getElementById("password").value.trim().toLowerCase();
-    if (password === "mi ojitos lindos") {
+    if (password.replace(/\s+/g, ' ').trim().toLowerCase() === "mi ojitos lindos") {
         document.getElementById("login-container").style.display = "none";
         document.getElementById("app-container").style.display = "block";
         startCountdown();
