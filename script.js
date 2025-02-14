@@ -21,6 +21,15 @@ const romanticMessages = [
     "💘 Falta poco para tu sorpresa"
 ];
 
+function showQuestion() {
+    const questionContainer = document.getElementById("question-container");
+    if (questionContainer) {
+        questionContainer.classList.add("show");
+    } else {
+        console.error("No se encontró el contenedor de la pregunta.");
+    }
+}
+
 function startCountdown() {
     const countdownTimer = document.getElementById("countdown-timer");
     const romanticMessage = document.getElementById("romantic-message");
@@ -39,6 +48,7 @@ function startCountdown() {
             countdownTimer.innerText = "¡Es el momento! 💖";
             document.getElementById("countdown-screen").style.display = "none";
             document.getElementById("question-container").classList.remove("hidden");
+            showQuestion();
             return;
         }
 
@@ -104,20 +114,20 @@ function createHearts() {
         document.body.appendChild(heartsContainer);
     }
     
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 30; i++) {
         setTimeout(() => {
             let heart = document.createElement("div");
             heart.className = "floating-heart";
             heart.style.left = `${Math.random() * 100}%`;
-            heart.style.animationDuration = `${5 + Math.random() * 4}s`; // Variación en la velocidad
-            heart.style.width = `${40 + Math.random() * 20}px`; // Tamaños variados
+            heart.style.animationDuration = `${6 + Math.random() * 4}s`; // Variación en la velocidad
+            heart.style.width = `${60 + Math.random() * 40}px`; // Tamaños variados
             heart.style.height = heart.style.width;
             heartsContainer.appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
-            }, 8000); // Mayor duración antes de desaparecer
-        }, i * 300);
+            }, 10000); // Mayor duración antes de desaparecer
+        }, i * 200);
     }
 }
 
