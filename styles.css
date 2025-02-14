@@ -172,7 +172,7 @@ button:hover {
 
 #play-music {
     position: fixed;
-    bottom: 10px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     background: #ff4d6d;
