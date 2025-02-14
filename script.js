@@ -147,4 +147,3 @@ const generateMessageButton = document.getElementById("generate-message");
     } else {
         console.error("El botón 'Mensaje para ti' no se encontró en el DOM.");
     }
-};
