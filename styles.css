@@ -10,28 +10,50 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.8em;
     padding: 20px;
     box-sizing: border-box;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Contador de segundos */
 #countdown-timer {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
     color: #ff2e63;
     margin-top: 10px;
+    text-shadow: 2px 2px 10px rgba(255, 46, 99, 0.5);
+    animation: pulse 1.5s infinite alternate;
 }
 
-/* Diseño responsive */
+/* 💖 Mensajes románticos con animación */
+#romantic-message {
+    font-size: 1.2em;
+    color: #ff6392;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 💖 Efecto de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 💖 Efecto de pulso para el contador */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* 📱 Mejor diseño en móviles */
 @media (max-width: 600px) {
     #countdown-screen {
-        font-size: 1.5em;
-        padding: 10px;
+        font-size: 1.3em;
+        padding: 15px;
     }
 
     #countdown-timer {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 }
 
