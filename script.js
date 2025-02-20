@@ -8,9 +8,9 @@ if ("serviceWorker" in navigator) {
     });
 }
 
-// Definir la fecha y hora objetivo (hoy a las 20:30)
+// Definir la fecha y hora objetivo
 const targetDate = new Date();
-targetDate.setHours(20, 30, 0, 0); // 20:30:00 horas de hoy
+targetDate.setHours(0, 0, 0, 0); 
 
 // Mensajes románticos que se mostrarán durante la cuenta regresiva
 const romanticMessages = [
